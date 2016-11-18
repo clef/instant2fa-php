@@ -1,0 +1,30 @@
+{
+  "name": "clef/instant2fa-php",
+  "description": "A PHP client for Instant2FA.",
+  "keywords": [
+    "two factor",
+    "2fa",
+    "authentication",
+    "otp",
+    "api"
+  ],
+  "homepage": "https://instant2fa.com",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Instant2FA and contributors",
+      "homepage": "https://github.com/clef/instant2fa-php/contributors"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.3"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0",
+    "satooshi/php-coveralls": "~0.6.1",
+    "squizlabs/php_codesniffer": "~2.0"
+  },
+  "autoload": {
+    "psr-4": { "Instant2FA\\" : "lib/" }
+  }
+}
