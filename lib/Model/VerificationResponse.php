@@ -8,8 +8,14 @@ class VerificationResponse {
     public $status;
 
     public function __construct(array $options) {
-        $this->id = $options['id'];
-        $this->distinct_id = $options['distinct_id'];
-        $this->status = $options['status'];
+        if (isset($options['id'])) {
+            $this->id = $options['id'];
+        }
+        if (isset($options['distinct_id'])) {
+            $this->distinct_id = $options['distinct_id'];
+        }
+        if (isset($options['status'])) {
+            $this->status = $options['status'];
+        }
     }
 }
