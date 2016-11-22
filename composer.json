@@ -1,5 +1,5 @@
 {
-  "name": "clef/instant2fa-php",
+  "name": "clef/instant2fa",
   "description": "A PHP client for Instant2FA.",
   "keywords": [
     "two factor",
