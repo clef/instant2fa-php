@@ -8,8 +8,14 @@ class UserAccessToken {
     public $hosted_page_url;
 
     public function __construct(array $options) {
-        $this->id = $options['id'];
-        $this->distinct_id = $options['distinct_id'];
-        $this->hosted_page_url = $options['hosted_page_url'];
+        if (isset($options['id'])) {
+            $this->id = $options['id'];
+        }
+        if (isset($options['distinct_id'])) {
+            $this->distinct_id = $options['distinct_id'];
+        }
+        if (isset($options['hosted_page_url'])) {
+            $this->hosted_page_url = $options['hosted_page_url'];
+        }
     }
 }
