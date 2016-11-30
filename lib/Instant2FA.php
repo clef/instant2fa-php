@@ -18,6 +18,7 @@ use Instant2FA\Serializer\UserAccessTokenSerializer;
 use Instant2FA\Serializer\VerificationRequestSerializer;
 use Instant2FA\Serializer\VerificationResponseSerializer;
 
+use Instant2FA\Error\Instant2FAException;
 use Instant2FA\Error\APIException;
 use Instant2FA\Error\MFANotEnabled;
 use Instant2FA\Error\VerificationFailedException;
@@ -80,6 +81,8 @@ class Instant2FA {
                 $error_body = $response->getBody();
                 $doc = $this->decoder->decode($error_body);
                 throw new APIException($doc->errors);
+            } else {
+                throw new Instant2FAException($e->getMessage());
             }
         }
 
@@ -110,6 +113,8 @@ class Instant2FA {
                 $error_body = $response->getBody();
                 $doc = $this->decoder->decode($error_body);
                 throw new APIException($doc->errors);
+            } else {
+                throw new Instant2FAException($e->getMessage());
             }
         }
         $body = $response->getBody();
@@ -144,6 +149,8 @@ class Instant2FA {
                 $error_body = $response->getBody();
                 $doc = $this->decoder->decode($error_body);
                 throw new APIException($doc->errors);
+            } else {
+                throw new Instant2FAException($e->getMessage());
             }
         }
         $body = $response->getBody();
